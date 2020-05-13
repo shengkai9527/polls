@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>民意调查</title>
+</head>
+<body>
+{% if latest_question_list %}
+    <ul>
+        {% for question in latest_question_list %}
+            <li><a href="/polls/{{ question.id }}/"{{ question.question_text }}</ul></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>没有民意调查.</p>
+{% endif %}
+
+</body>
+</html>
